@@ -1,21 +1,19 @@
-import java.util.Date;
+import java.sql.Date;
 
 public class task
 {
-    // model class: represents a task (id, title, status, etc.)
-    
     int id;
     String description;
-    taskStatus taskStatus;
+    String status;
     Date createdAt;
-    Date updatedAt;
 
-    public task(int id, String description,taskStatus taskStatus, Date createdAt, Date updatedAt)
+    public task(int id, String description,String status,Date taskDate)
     {
         this.id = id;
         this.description = description;
-        this.taskStatus = taskStatus;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
+        this.status = status;
+        this.createdAt = taskDate;
     }
+
+    
 }
