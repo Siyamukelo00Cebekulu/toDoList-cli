@@ -14,7 +14,7 @@ public class CliParser {
     {
         if(args.length == 0)
         {
-            return "No input recieved";
+            return this.action = "No command line arguments recieved";
         }else
         {
             return this.action = args[0];
@@ -25,7 +25,7 @@ public class CliParser {
     {
         if(args.length <= 1)
         {
-            return this.command = "No input recieved";
+            return this.command = "No command instruction recieved";
         }else
         {
             return  this.command = args[1];
