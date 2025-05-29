@@ -10,7 +10,8 @@ public class Main {
 
     switch (cliParser.command) {
         case "add":
-            taskservice.add(cliParser.action);
+        taskservice addTask = new taskservice();    
+        addTask.addTask(cliParser.action);
             break;
         case "delete":
             System.out.println("Task deleted");
