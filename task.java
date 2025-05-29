@@ -1,18 +1,19 @@
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class task
 {
     // model class: represents a task (id, title, status, etc.)
     
-    int id;
+    public static int id = 0;
     String description;
     taskStatus taskStatus;
     Date createdAt;
-    Date updatedAt;
 
-    public task(int id, String description,taskStatus taskStatus, Date createdAt)
+
+    public task(String description,taskStatus taskStatus, Date createdAt)
     {
-        this.id = id;
+        id ++;
         this.description = description;
         this.taskStatus = taskStatus;
         this.createdAt = createdAt;
@@ -22,7 +23,7 @@ public class task
     // getters
     public int getId()
     {
-        return this.id;
+        return id;
     }
     public String getDescription()
     {
@@ -38,7 +39,7 @@ public class task
     }
     public Date getUpdatedAtDate()
     {
-        return this.updatedAt;
+        return this.createdAt;
     }
 
     public void updateDescription(String description)
@@ -48,11 +49,38 @@ public class task
 
     public void updateTaskDate(Date updatedAt)
     {
-        this.updatedAt = updatedAt;
+        this.createdAt = updatedAt;
     }
 
     public void updateTaskStatus(taskStatus status)
     {
         this.taskStatus = status;
+    }
+
+
+    // Format date to ISO-8601 string
+    private String formatDate(Date date) {
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+        return formatter.format(date);
+    }
+
+    // Escape JSON string
+    private String escapeJson(String value) {
+        return "\"" + value
+            .replace("\\", "\\\\")
+            .replace("\"", "\\\"")
+            .replace("\n", "\\n")
+            .replace("\r", "\\r")
+            .replace("\t", "\\t") + "\"";
+    }
+
+    public String toJson() {
+        return "{"
+            + "\"id\":" + id + ","
+            + "\"description\":" + escapeJson(this.description) + ","
+            + "\"taskStatus\":" + escapeJson(this.taskStatus.name()) + ","
+            + "\"createdAt\":" + escapeJson(formatDate(this.createdAt)) + ","
+            + "\"updatedAt\":" + escapeJson(formatDate(this.createdAt))
+            + "}";
     }
 }

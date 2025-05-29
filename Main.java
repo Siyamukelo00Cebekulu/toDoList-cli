@@ -1,7 +1,10 @@
+
+import java.io.IOException;
+
 public class Main {
 
     // entry point: parses CLI args and routes actions
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
     CliParser cliParser = new CliParser(args);
 
