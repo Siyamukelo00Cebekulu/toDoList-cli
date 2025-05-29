@@ -1,16 +1,16 @@
 public class taskservice {
     // contains logic for add, delete and update
-    public void add()
+    public static void add(String task)
     {
         
     }
 
-    public void delete()
+    public static void delete()
     {
 
     }
 
-    public void update()
+    public static void update()
     {
 
     }

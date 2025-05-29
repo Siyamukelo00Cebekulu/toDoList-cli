@@ -3,10 +3,11 @@ public class Main {
     // entry point: parses CLI args and routes actions
     public static void main(String[] args) {
 
-    
-    switch (args[0]) {
+    CliParser cliParser = new CliParser(args);
+
+    switch (cliParser.command) {
         case "add":
-            System.out.println("task added'");
+            taskservice.add(cliParser.action);
             break;
         case "delete":
             System.out.println("Task deleted");

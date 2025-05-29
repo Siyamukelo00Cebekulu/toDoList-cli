@@ -1,5 +1,5 @@
 public enum taskStatus {
     PENDING,
     COMPLETED,
-    TO_DO
+    TO_DO 
 }
