@@ -9,16 +9,11 @@ public class Main {
     CliParser cliParser = new CliParser(args);
 
     switch (cliParser.command) {
-        case "add":
-        taskservice addTask = new taskservice();    
-        addTask.addTask(cliParser.action);
-            break;
-        case "delete":
-            System.out.println("Task deleted");
-        case "update":
-            System.out.println("Task updated");
-        default:
-            break;
+        case "add" -> { taskservice.addTask(cliParser.action);}
+        case "delete" -> System.out.println("Task deleted");
+        case "update" -> System.out.println("Task updated");
+        default -> {
+            }
         }
     }
 }
