@@ -16,6 +16,7 @@ A simple command-line interface (CLI) tool written in pure Java to help you mana
 
 ## 📁 Project Structure
 
+TODOLIST-CLI/
 ├── Task.java // Task model
 ├── TaskManager.java // Core logic
 ├── TaskStorage.java // JSON file handler
@@ -42,57 +43,55 @@ java TaskCLI add "Buy groceries"
 ```
 ---
 
-## Add a new task
+## ➕ Add a new task
 
 ```bash
 java TaskCLI add "Buy groceries"
 ```
 
-### Output:
-Task added successfully (ID: 1)
-
 ---
 
-## Update an existing task
+## ✏️ Update an existing task
 
 ```bash
 java TaskCLI update 1 "Buy groceries and cook dinner"
 ```
 
-## Delete a task
+## ❌ Delete a task
 
 ```bash
 java TaskCLI delete 1
 ```
 
-## Mark a task as in-progress
+## 📝 Mark a task as in-progress
 
 ```bash
 java TaskCLI mark-in-progress 1
 ```
 
-## Mark a task as done
+## 📝 Mark a task as done
 
 ```bash
 java TaskCLI mark-done 1
 ```
 
-## Mark a task as done
 
-```bash
-java TaskCLI mark-done 1
-```
-
-## List all tasks
+## 📝 List all tasks
 
 ```bash
 java TaskCLI list
 ```
 
-## List tasks by status
+## 📝 List tasks by status
 
 ```bash
 java TaskCLI list todo
 java TaskCLI list done
 java TaskCLI list in-progress
+```
+
+## 🧪 Run Unit Tests
+
+```bash
+java TaskCLITest
 ```
