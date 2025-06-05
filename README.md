@@ -25,7 +25,8 @@ TODOLIST-CLI/
 ├── TaskStorage.java // JSON file handler
 
 ├── TaskCLI.java // Command-line interface
-└── TaskCLITest.java // Simple unit tests
+
+├── TaskCLITest.java // Simple unit tests
 
 
 ---
