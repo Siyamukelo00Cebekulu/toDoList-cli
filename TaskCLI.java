@@ -9,7 +9,7 @@ public class TaskCLI {
         TaskManager manager = new TaskManager(TaskStorage.loadTasks());
 
         switch (command) {
-            case "add":
+            case "add" -> {
                 if (args.length < 2) {
                     printHelp();
                     return;
@@ -17,25 +17,24 @@ public class TaskCLI {
                 Task newTask = manager.addTask(args[1]);
                 TaskStorage.saveTasks(manager.getAllTasks());
                 System.out.println("Task added successfully (ID: " + newTask.id + ")");
-                break;
-            case "update":
+            }
+            case "update" -> {
                 if (args.length < 3) printHelp();
                 else {
                     boolean updated = manager.updateTask(Integer.parseInt(args[1]), args[2]);
                     TaskStorage.saveTasks(manager.getAllTasks());
                     System.out.println(updated ? "Task updated." : "Task not found.");
                 }
-                break;
-            case "delete":
+            }
+            case "delete" -> {
                 if (args.length < 2) printHelp();
                 else {
                     boolean deleted = manager.deleteTask(Integer.parseInt(args[1]));
                     TaskStorage.saveTasks(manager.getAllTasks());
                     System.out.println(deleted ? "Task deleted." : "Task not found.");
                 }
-                break;
-            case "mark-done":
-            case "mark-in-progress":
+            }
+            case "mark-done", "mark-in-progress" -> {
                 if (args.length < 2) printHelp();
                 else {
                     String status = command.equals("mark-done") ? "done" : "in-progress";
@@ -43,15 +42,14 @@ public class TaskCLI {
                     TaskStorage.saveTasks(manager.getAllTasks());
                     System.out.println(marked ? "Task marked as " + status : "Task not found.");
                 }
-                break;
-            case "list":
+            }
+            case "list" -> {
                 String filter = args.length == 2 ? args[1] : "all";
                 for (Task task : manager.listTasks(filter)) {
                     System.out.println("#" + task.id + " [" + task.status + "] " + task.description);
                 }
-                break;
-            default:
-                printHelp();
+            }
+            default -> printHelp();
         }
     }
 

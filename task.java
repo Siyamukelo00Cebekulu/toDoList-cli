@@ -23,11 +23,11 @@ public class Task {
             String[] kv = part.split(":", 2);
             if (kv.length != 2) continue;
             switch (kv[0].trim()) {
-                case "id": id = Integer.parseInt(kv[1].trim()); break;
-                case "description": description = kv[1].trim(); break;
-                case "status": status = kv[1].trim(); break;
-                case "createdAt": createdAt = kv[1].trim(); break;
-                case "updatedAt": updatedAt = kv[1].trim(); break;
+                case "id" -> id = Integer.parseInt(kv[1].trim());
+                case "description" -> description = kv[1].trim();
+                case "status" -> status = kv[1].trim();
+                case "createdAt" -> createdAt = kv[1].trim();
+                case "updatedAt" -> updatedAt = kv[1].trim();
             }
         }
         return new Task(id, description, status, createdAt, updatedAt);

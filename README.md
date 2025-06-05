@@ -18,9 +18,13 @@ A simple command-line interface (CLI) tool written in pure Java to help you mana
 
 TODOLIST-CLI/
 ├── Task.java // Task model
+
 ├── TaskManager.java // Core logic
+
 ├── TaskStorage.java // JSON file handler
+
 ├── TaskCLI.java // Command-line interface
+
 └── TaskCLITest.java // Simple unit tests
 
 
